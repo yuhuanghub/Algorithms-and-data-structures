@@ -78,6 +78,26 @@ void printStackElem(sqStack s){
 	}
 }
 
+//摧毁一个栈
+int destroyStack(sqStack *s){
+	int i,lenth;
+	lenth = s->stackSize;
+	for (i = 0; i < lenth; ++i)
+	{
+		free(s->base);
+		s->base++;
+		/* code */
+	}
+	s->base = s->top = NULL;
+	s->stackSize = 0;
+	return OK;
+}
+
+//计算栈空间大小
+int stackLen(sqStack s){
+	return ( (s.top - s.base));
+}
+
 int main(int argc, char const *argv[])
 {
 	int e,i;
@@ -101,5 +121,7 @@ int main(int argc, char const *argv[])
 	printf("顶部出栈后的s\n");
 	pop(s, e);
 	printStackElem(s);
+
+	printf("栈的大小为%d\n", stackLen(s));
 	return 0;
 }
