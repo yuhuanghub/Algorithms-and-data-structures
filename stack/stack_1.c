@@ -10,6 +10,8 @@ typedef int ElemType;
 typedef struct 
 {
 	ElemType *base;
+	ElemType *base;
+	ElemType *base;	
 	ElemType *top;
 	int stackSize;
 }sqStack;
