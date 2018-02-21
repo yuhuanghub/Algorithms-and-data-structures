@@ -1,1 +1,2 @@
-*.exe
+/BiTree/*.exe
+/Stack/*.exe
